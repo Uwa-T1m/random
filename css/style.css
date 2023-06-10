@@ -149,17 +149,19 @@ body {
 
 .search {
   width: 90%;
-  padding: 20px;
   background: #eee;
-  border-radius: 60px;
+  height: 40px;
   margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  gap: 10px;
 }
 
 .search input {
   width: 90%;
   border: 0;
   outline: 0;
-  padding: 0 15px;
   background: none;
   font-size: 20px;
 }
@@ -168,6 +170,7 @@ body {
   font-size: 20px;
   background: none;
   border: 0;
+  margin:0 5px;
 }
 
 .card-holder {
@@ -528,6 +531,12 @@ footer p {
 }
 
 @media screen and (max-width: 600px) {
+
+  .topnav{
+    padding: 0;
+
+  }
+
   .topnav.responsive {
     position: relative;
   }
@@ -586,7 +595,7 @@ footer p {
     align-items: center;
     justify-content: space-between;
     overflow-x: auto;
-    gap: 35px;
+    gap: 15px;
     width: 100%;
     padding: 15px 0;
     margin: 25px 0;
@@ -598,7 +607,7 @@ footer p {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 20px;
+    margin: 0 10px;
   }
 
   .card .pic,
