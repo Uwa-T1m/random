@@ -333,7 +333,7 @@ body {
 }
 
 .features {
-  height: 40vh;
+  height: 20vh;
   width: 100%;
   flex-direction: column;
   background: #435761;
@@ -586,7 +586,7 @@ footer p {
   }
 
   .categories {
-    height: 50vh;
+    height: auto;
     width: 100%;
   }
 
@@ -597,8 +597,9 @@ footer p {
     overflow-x: auto;
     gap: 15px;
     width: 100%;
-    padding: 15px 0;
+    /* padding: 15px 0; */
     margin: 25px 0;
+    height: auto;
   }
 
 
@@ -626,10 +627,12 @@ footer p {
     display: flex;
     gap: 15px;
     overflow-x: scroll;
+    margin-top: 0;
   }
 
   .cards {
     width: 100%;
+    height: auto;
   }
 
 
@@ -652,6 +655,7 @@ footer p {
   footer {
     background: black;
     display: flex;
+    color: #fff;
     flex-direction: column;
   }
 
