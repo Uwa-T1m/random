@@ -615,7 +615,7 @@ footer p {
   .card-hold,
   .card-hold-1 {
     display: flex;
-    gap: 45px;
+    gap: 15px;
     overflow-x: scroll;
   }
 
