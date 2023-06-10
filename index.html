@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopper - Your Reliable E- Commerce Site</title>
+    <link rel="stylesheet" href="./css/fontawesome-all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="topnav">
+        <div class="logo">
+            <h3><i class="fas fa-shopping-cart"></i> Shopper</h3>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="openNav()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <div class="list" id="mySidebar">
+            <a href="./index.html" class="active">Home</a>
+            <a href="./sales.html">Deals</a>
+            <a href="./checkout.html">Checkout</a>
+            <i class="fa fa-times" id="close" onclick="closeNav()"></i>
+        </div>
+    </nav>
+
+    <div class="search">
+        <button><i class="fas fa-search"></i></button>
+        <input type="search" placeholder="Search..">
+    </div>
+    <!-- Hero -->
+    <div class="slideshow-container">
+
+        <div class="mySlides fade hero">
+            <h1>Summer Trade Is Finally Here!</h1>
+            <b>
+                <p>Get every product at 10% discount</p>
+            </b>
+            <br>
+        </div>
+
+        <div class="mySlides fade hero">
+        </div>
+
+        <div class="mySlides fade hero">
+            <h1>Top Deals On Jeweleries</h1>
+            <b>
+                <p>Get Cool Jeweleries at an affordable price</p>
+            </b>
+            <br>
+        </div>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+        </script>
+    </div>
+
+
+    <!-- CATEGORIES OF PRODUCTS-->
+    <section class="categories">
+
+        <div class="card-holder">
+            <div class="card">
+                <div class="pic">
+                    <img src="./imgs/woman-dep.jpg" alt="">
+                    <h3>WOMEN</h3>
+                    <button class="btn">
+                        <a href="#black-friday">Shop Now</a>
+                    </button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="pic">
+                    <img src="../shopapp-main/man.png" alt="">
+                    <h3>MEN</h3>
+                    <button class="btn">
+                        <a href="#black-friday">Shop Now</a>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BLACK FRIDAY DEALS -->
+    <section class="blakfri" id="black-friday">
+        <h1 style="margin: 10px;">Exciting Deals</h1>
+        <br><br>
+        <div class="card-hold">
+            <script>
+                let products = [
+                    {
+                        "id": 1,
+                        "title": "Fjallraven - Foldsack No. 1 Backpack",
+                        "price": 109.95,
+                        "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+                        "category": "men's clothing",
+                        "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+                        "rating": {
+                            "rate": 3.9,
+                            "count": 120
+                        }
+                    },
+                    {
+                        "id": 2,
+                        "title": "Mens Casual Premium Slim Fit T-Shirts",
+                        "price": 22.3,
+                        "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+                        "category": "men's clothing",
+                        "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+                        "rating": {
+                            "rate": 4.1,
+                            "count": 259
+                        }
+                    },
+                    {
+                        "id": 3,
+                        "title": "Mens Cotton Jacket",
+                        "price": 55.99,
+                        "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+                        "category": "men's clothing",
+                        "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+                        "rating": {
+                            "rate": 4.7,
+                            "count": 500
+                        }
+                    },
+                    {
+                        "id": 4,
+                        "title": "Mens Casual Slim Fit",
+                        "price": 15.99,
+                        "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+                        "category": "men's clothing",
+                        "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+                        "rating": {
+                            "rate": 2.1,
+                            "count": 430
+                        }
+                    },
+                    {
+                        "id": 5,
+                        "title": "Women's Legends Naga Gold  Chain Bracelet",
+                        "price": 695,
+                        "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+                        "category": "jewelery",
+                        "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+                        "rating": {
+                            "rate": 4.6,
+                            "count": 400
+                        }
+                    },
+                    {
+                        "id": 6,
+                        "title": "Solid Gold Petite Micropave ",
+                        "price": 168,
+                        "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
+                        "category": "jewelery",
+                        "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+                        "rating": {
+                            "rate": 3.9,
+                            "count": 70
+                        }
+                    }]
+
+                for (let i = 0; i < products.length; i++) {
+                    const product = products[i];
+                    const cardHolder = document.querySelector('.card-hold');
+                    const productImageHolder = document.createElement('div');
+                    const productImage = document.createElement('img');
+                    const imageURL = product.image;
+                    const productCard = document.createElement('div');
+                    const productName = document.createElement('h4');
+                    const productPrice = document.createElement('b');
+                    const btn_holder = document.createElement('div');
+                    const reaction = document.createElement('div');
+
+                    productImageHolder.classList.add('img');
+                    productName.classList.add('product-title')
+                    productPrice.classList.add('product-price')
+                    productImage.classList.add('product-image')
+                    productCard.classList.add('cards');
+                    btn_holder.classList.add('btn-holder');
+                    reaction.classList.add('reaction');
+
+                    cardHolder.appendChild(productCard);
+                    productCard.appendChild(productImageHolder);
+                    productImageHolder.appendChild(productImage);
+                    productCard.appendChild(productName);
+                    productCard.appendChild(productPrice);
+                    productCard.appendChild(btn_holder);
+                    btn_holder.appendChild(reaction)
+
+                    productPrice.innerHTML = `${product.price}`
+                    productImage.src = imageURL
+                    productName.innerHTML = product.title;
+                    btn_holder.innerHTML = `
+      <button class='add-to-cart'>Add To Cart</button>
+      <div class reaction>
+        </div>
+    `;
+                    reaction.innerHTML = `
+      <button><i class="fas fa-heart"></i></button>
+      <button><i class="fas fa-share"></i></button>
+    `
+                }
+
+            </script>
+        </div>
+        <h1 style="margin: 15px 0 10px 10px;">Top Deals On Electronics</h1>
+        <div class="card-hold-1">
+            <script>
+                products1 = [
+                    {
+                        "id": 9,
+                        "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
+                        "price": 64,
+                        "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
+                        "category": "electronics",
+                        "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+                        "rating": {
+                            "rate": 3.3,
+                            "count": 203
+                        }
+                    },
+                    {
+                        "id": 10,
+                        "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+                        "price": 109,
+                        "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
+                        "category": "electronics",
+                        "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
+                        "rating": {
+                            "rate": 2.9,
+                            "count": 470
+                        }
+                    },
+                    {
+                        "id": 11,
+                        "title": "Silicon Power A55 SLC Cache  SATA III 2.5",
+                        "price": 109,
+                        "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
+                        "category": "electronics",
+                        "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
+                        "rating": {
+                            "rate": 4.8,
+                            "count": 319
+                        }
+                    },
+                    {
+                        "id": 12,
+                        "title": "WD 4TB Gaming Drive with Playstation 4 Portable External Hard Drive",
+                        "price": 114,
+                        "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
+                        "category": "electronics",
+                        "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
+                        "rating": {
+                            "rate": 4.8,
+                            "count": 400
+                        }
+                    },
+                    {
+                        "id": 13,
+                        "title": "Acer SB220Q bi 21.5 inches HD IPS Ultra-Thin",
+                        "price": 599,
+                        "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
+                        "category": "electronics",
+                        "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
+                        "rating": {
+                            "rate": 2.9,
+                            "count": 250
+                        }
+                    },
+                    {
+                        "id": 14,
+                        "title": "Samsung Curved Gaming Monitor",
+                        "price": 999.99,
+                        "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
+                        "category": "electronics",
+                        "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
+                        "rating": {
+                            "rate": 2.2,
+                            "count": 140
+                        }
+                    },
+                ]
+                for (let i = 0; i < products1.length; i++) {
+                    const product1 = products1[i];
+                    const cardHolder = document.querySelector('.card-hold-1');
+                    const productImageHolder = document.createElement('div');
+                    const productImage = document.createElement('img');
+                    const imageURL = product1.image;
+                    const productCard = document.createElement('div');
+                    const productName = document.createElement('h4');
+                    const productPrice = document.createElement('b');
+                    const btn_holder = document.createElement('div');
+                    const reaction = document.createElement('div');
+
+                    productImageHolder.classList.add('img');
+                    productName.classList.add('product-title')
+                    productPrice.classList.add('product-price')
+                    productImage.classList.add('product-image')
+                    productCard.classList.add('cards');
+                    btn_holder.classList.add('btn-holder');
+                    reaction.classList.add('reaction');
+
+                    cardHolder.appendChild(productCard);
+                    productCard.appendChild(productImageHolder);
+                    productImageHolder.appendChild(productImage);
+                    productCard.appendChild(productName);
+                    productCard.appendChild(productPrice);
+                    productCard.appendChild(btn_holder);
+                    btn_holder.appendChild(reaction)
+
+                    productPrice.innerHTML = `${product1.price}`
+                    productImage.src = imageURL
+                    productName.innerHTML = product1.title;
+                    btn_holder.innerHTML = `
+      <button class='add-to-cart'>Add To Cart</button>
+      <div class reaction>
+        </div>
+    `;
+                    reaction.innerHTML = `
+      <button><i class="fas fa-heart"></i></button>
+      <button><i class="fas fa-share"></i></button>
+    `
+                }
+            </script>
+        </div>
+    </section>
+
+    <section class="features">
+        <h1>Sponsors</h1>
+        <div class="sponsor-card-holder">
+            <div class="sponsor-card"><img src="./customer-logo-1.png" alt=""></div>
+            <div class="sponsor-card"><img src="./customer-logo-2.png" alt=""></div>
+            <div class="sponsor-card"><img src="./customer-logo-3.png" alt=""></div>
+            <div class="sponsor-card"><img src="./customer-logo-4.png" alt=""></div>
+            <div class="sponsor-card"><img src="./customer-logo-5.png" alt=""></div>
+            <div class="sponsor-card"><img src="./customer-logo-6.png" alt=""></div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><i class="far fa-envelope"></i> <b>Email Address:</b> shoppingspree32@page.com</p>
+        <p><i class="fab fa-twitter"></i> @shopper</p>
+        <p><i class="fab fa-facebook"></i> @shopper32</p>
+        <p><i class="far fa-phone"></i> 555 555 555 5559</p>
+
+    </footer>
+
+    <script src="home.js"></script>
+    <script>
+        // Get all "Add to Cart" buttons
+        var addToCartButtons = document.getElementsByClassName('add-to-cart');
+
+        // Cart items array
+        var cartItems = [];
+
+        // Add event listeners to each "Add to Cart" button
+        for (var i = 0; i < addToCartButtons.length; i++) {
+            addToCartButtons[i].onclick = function (event) {
+                var product = event.target.parentNode.parentNode;
+                var productName = product.getElementsByClassName('product-title')[0].innerHTML;
+                var productDescription = product.getElementsByClassName('product-price')[0].innerHTML;
+                var productImage = product.getElementsByClassName('product-image')[0].src;
+
+
+                var cartItem = {
+                    "name": productName,
+                    "description": productDescription,
+                    "image": productImage
+                };
+
+                cartItems.push(cartItem);
+                localStorage.setItem('productInfo', JSON.stringify(cartItems));
+                window.location.href = 'checkout.html'
+
+            };
+        };
+    </script>
+    <section class="productHolder">
+        <div class="productInfo">
+            <b class="back-btn"><i class="fas fa-arrow-left"></i></b>
+            <img src="" alt="">
+            <div class="part">
+                <h4 class="name"></h4>
+                <p class="selectedprice"></p>
+            </div>
+            <p class="description"></p>
+            <p>Size:</p>
+            <div class="size">
+                <span class="activeSize">XS</span>
+                <span>S</span>
+                <span>M</span>
+                <span>L</span>
+                <span>XL</span>
+            </div>
+            <p>Color:</p>
+            <div class="color">
+                <span class="activeColor"></span>
+                <span></span>
+                <span></span>
+            </div>
+            <button class="add-to-cart">Add To Cart</button>
+        </div>
+    </section>
+    <script>
+        const previewItems = []
+        const productInfo = document.querySelector('.productInfo');
+        const selectedProductname = document.querySelector('.name')
+        const selectedProductdescription = document.querySelector('.description')
+        const selectProductprice = document.querySelector('.selectedprice')
+        const selectProductimage = productInfo.querySelector('img')
+        
+        const cards = document.querySelectorAll('.cards')
+        cards.forEach(card => {
+            card.addEventListener('click', (addEvent) => {
+                var card = addEvent.target.parentNode.parentNode;
+                var cardName = card.querySelectorAll('.product-title')[0].innerHTML;
+                var cardDescription = card.querySelectorAll('.product-price')[0].innerHTML;
+                var cardImage = card.querySelectorAll('.product-image')[0].src;
+                
+                var previewItem = {
+                    "name": cardName,
+                    "description": cardDescription,
+                    "image": cardImage
+                };
+                
+                previewItems.push(previewItem)
+                console.log(previewItems);
+                document.querySelector('.productHolder').style.display = 'block'
+                
+                for (let i = 0; i < products.length; i++) {
+                    const product = products[i]
+        
+                    selectedProductname.innerHTML = previewItems[previewItems.length -1].name;
+                    selectedProductdescription.innerHTML = product.description;
+                    selectProductprice.innerHTML = previewItems[previewItems.length -1].description;
+                    selectProductimage.src = previewItems[previewItems.length -1].image;
+                }
+            })
+        })
+        const sizes = document.querySelectorAll('.size span'),
+        colors = document.querySelectorAll('.color span')
+
+        const removeSizeSelector = () => sizes.forEach(size=>{
+            size.classList.remove('activeSize')
+
+        })
+
+        const removeColorSelector = () => colors.forEach(color=>{
+            color.classList.remove('activeColor')
+        })
+
+        sizes.forEach(size=>{
+            size.onclick = () =>{
+                removeSizeSelector()
+            size.classList.add('activeSize')
+            }
+        })
+
+        colors.forEach(color=>{
+            color.onclick = () =>{
+                removeColorSelector()
+                color.classList.add('activeColor')
+            }
+        })
+
+        document.querySelector('.back-btn').onclick = () => {
+            document.querySelector('.productHolder').style.display = 'none'
+        }
+    </script>
+</body>
+
+</html>

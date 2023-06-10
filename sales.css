@@ -1,0 +1,512 @@
+  @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    /* color: #333; */
+    /*font: italic small-caps bold 25px monospace ;*/
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Geologica', sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+  }
+
+
+
+  .list{
+    display: flex;
+  }
+  
+  #close{
+    display: none;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+  }
+  
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    border-bottom:1px solid #333 ;  
+  }
+  
+  .topnav a.active {
+    border-bottom:1px solid #333 ;  
+    color: #333;
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+  
+  .slideshow-container{
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.hero {
+  background: url(./jeans.jpg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 15vh;
+  width: 100%;
+  margin: 30px auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 15px;
+  padding-top: 15px;
+}
+
+.hero:nth-child(2){
+  background: url(./banner.jpg)center/cover no-repeat;
+}
+
+.hero:nth-child(3){
+  background: url(./banner1.jpg)center/cover no-repeat;
+  color: #111;
+ text-align: center;
+}
+
+
+.hero:not(:first-child){
+  display: none;
+}
+
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+  .center{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid #fff;
+  }
+  
+  .center h1,.center p{
+    color: cornsilk;
+  }
+  
+  .center h1{
+    font-size: 40px;
+    padding: 20px;
+  }
+  
+  .center button{
+    padding: 20px;
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) ;
+    color: #fff;
+    border: 0;
+  }
+
+  .blakfri{
+    height:auto;
+    width: 100%;
+  }
+  
+  .card-hold{
+    display: grid;
+    place-items: center;
+    gap:30px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+ 
+  .card-hold .cards{
+    position: relative;
+     /*background:blue;*/
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+    justify-content: center;
+    flex-direction: column;
+    height: 400px;
+    width: 80%;
+    gap:15px;
+    box-shadow:inset 5px 5px 10px rgba(0,0,0,0.1);
+    transition: all 400ms ease;
+    box-shadow:5px 5px 10px rgba(0,0,0,0.1);
+  }
+
+
+  .cards h4{
+    font-size: 20px;
+  }
+  
+.card-hold .cards .img{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+   .card-hold .cards .img img{
+    height: 200px;
+    width: 100%;
+   }
+  
+   .tag{
+    height: 50px;
+    width: 50px;
+    background: yellow;
+    color: red;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -25px;
+    right: -25px;
+  }
+  
+  .tag#closed{
+    height: 60px;
+    width: 60px;
+  }
+  
+   .btn-holder{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+  
+   .btn-holder button{
+    font-size: 15px;
+   margin-left: 2px;
+    width: 70%;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .reaction{
+    width: 30%;
+    padding: 10px 0;
+    display: flex;
+  }
+  
+   .reaction button{
+    width: 50%;
+    border: 0;
+    background: none;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .fa-heart:active{
+    color: red;
+  }
+  
+  .cards b{
+    color: black;
+    word-spacing: 20px;
+  }
+
+  .subscribe{
+    height: 60vh;
+    width: 100%;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 150pc;
+  }
+  
+  .subscribe input{
+    width: 80%;
+    padding: 15px;
+  }
+  
+  .subscribe button{
+    width: 30%;
+    font-size: 15px;
+    padding: 20px;
+    color: white;
+    background: red;
+    border-color: red;
+    border-radius: 10px;
+  }
+  
+  footer{
+    background: black;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  footer p{
+    padding: 10px;
+    color: white;
+  }
+  .productHolder {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+    display: none;
+  }
+  
+  .productInfo {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    overflow: auto;
+    background: #fff;
+    padding: 0 20px;
+    flex-direction: column;
+    width: 40%;
+  }
+  
+  .productInfo img,
+  .productInfo h4,
+  .productInfo button {
+    margin: 20px auto;
+    display: block;
+  }
+  
+  .back-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+  }
+  
+  .productInfo img {
+    height: 300px;
+    width: 300px;
+  }
+  
+  .productInfo .part {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .productInfo .size {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .productInfo .size span {
+    height: 35px;
+    width: 50px;
+    border: 1px solid #d8d7d7;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin: 15px;
+    cursor: pointer;
+    justify-content: center;
+  }
+  
+  .size span.activeSize{
+    background: #000;
+    color: #fff;
+  }
+  
+  .productInfo .color {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .productInfo .color span {
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: yellow;
+    border: 5px solid #fff;
+  }
+  
+  .productInfo .color span:hover,.productInfo .color span.activeColor  {
+    outline: 1px solid ;
+  }
+  
+  .productInfo .color span:nth-child(2) {
+    background: purple;
+  }
+  
+  .productInfo .color span:nth-child(3) {
+    background: blue;
+  }
+  
+  .productHolder.gone{
+    display: none;
+  }
+  
+  .productInfo button{
+    width: 90%;
+    padding: 15px 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+    
+  @media screen and (max-width: 600px){
+    .topnav a {display: none;}
+    .topnav .icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    img{
+      background: #fff;
+      color: #fff;
+    }
+
+    .topnav .list a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    
+    .list{
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background: white;
+        overflow-x: hidden;
+        transition: 0.5s;
+        flex-direction: column;
+        padding-top: 60px;
+    }
+
+    #close{
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        display: block;
+        font-size: 20px;
+        margin-left: 50px;
+        color: #333;
+    }
+    
+
+    
+
+    .center h1{
+      font-size: 30px;
+      padding: 20px;
+    }
+
+    .categories{
+      height: 100vh;
+      width: 100%;
+    }    
+
+    .card-holder{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      overflow-x: auto;
+      width: 100%;
+      padding: 15px 0;
+      margin: 25px 0;
+    }
+
+    .productHolder{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      display: none;
+    }
+    
+    .productInfo{
+      position: relative;
+      width: 100%;
+    }
+
+    .blakfri{
+      height: 380vh;
+    }
+
+    .card-hold{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+    }
+
+  }
+
+    

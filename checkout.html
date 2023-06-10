@@ -1,0 +1,123 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wizard || Shopping || Checkout</title>
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="topnav">
+        <div class="logo">
+            <h3><i class="fas fa-shopping-cart"></i> Shopper</h3>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="openNav()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <div class="list" id="mySidebar">
+            <a href="./index.html">Home</a>
+            <a href="./sales.html">Deals</a>
+            <a href="./checkout.html" class="active">Checkout</a>
+            <i class="fa fa-times" id="close" onclick="closeNav()"></i>
+        </div>
+    </nav>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="center">
+            <div class="text">
+                <h1>Black Friday Is Finally Here!</h1>
+                <b>
+                    <p> Get every product at 10% discount</p>
+                </b>
+                <br>
+                <a href="./index.html#black-friday"><button>SHOP NOW</button></a>
+            </div>
+            <div class="img"><img src="./imgs/woman-dep.jpg" alt=""></div>
+        </div>
+    </section>
+    <!-- PURCHASES TABLE -->
+    <table>
+        <tr>
+            <th>PREVIEW</th>
+            <th>PRODUCT</th>
+            <th>Q_TY</th>
+            <th>PRICE ($)</th>
+            <th class="hide-small">TOTAL ($)</th>
+        </tr>
+    </table>
+
+    <!-- COUPONS -->
+    <section class="coupon">
+        <input disabled type="text" name="" id="" placeholder="Coupon Code" value="AE1245e70">
+        <div class="btn">
+            <button disabled>APPLY COUPON</button>
+            <button class="outline" disabled>UPDATE CART</button>
+        </div>
+    </section>
+    <hr>
+
+    <!-- CALCULATE SHIPPING -->
+    <section class="shipping" id="shipping">
+        <h3>CALCULATE SHIPPING</h3>
+        <p class="intro">
+            Shipping costs will be clculated once you have provided your address
+        </p>
+        <div class="form">
+            <select name="" id="">
+                <option value=""> Country</option>
+                <option value="UK"> United Kingdom(UK)</option>
+                <option value="US"> United States(USA)</option>
+                <option value="NGN"> Nigeria</option>
+                <option value="CAN"> Canada</option>
+                <option value="ESP"> Spain</option>
+                <option value="UKR"> Ukraine</option>
+                <option value="RUS"> Russia</option>
+            </select>
+            <input type="text" placeholder="   State">
+            <input type="text" placeholder="   Postcode / Zip">
+            <a href="#totals">
+                <button class="total">UPDATE TOTALS</button>
+            </a>
+        </div>
+    </section>
+
+    <!-- SUMMARY -->
+
+    <div class="card" id="totals">
+        <header>CARD TOTALS</header>
+        <div class="body">
+            <div class="part">
+                <p>SUBTOTALS:</p>
+                <p class="right subTotals"></p>
+            </div>
+            <div class="part">
+                <p>SHIPPING:</p>
+                <p class="right"><a href="#shipping">Calculate shipping</a></p>
+            </div>
+            <hr>
+            <div class="part">
+                <p>TOTAL:</p>
+                <p class="right price finalPrice"></p>
+            </div>
+            <button id="cartButton">GO TO CHECKOUT</button>
+        </div>
+    </div>
+
+    <div class="cc-holder">
+        <i class="fab fa-cc-palpay"></i>
+        <i class="fab fa-cc-stripe"></i>
+        <i class="fab fa-cc-amex"></i>
+        <i class="fab fa-cc-mastercard"></i>
+        <i class="fab fa-cc-visa"></i>
+        <i class="fab fa-cc-discover"></i>
+    </div>
+
+    <script src="./checkout.js"></script>
+    <script src="./home.js"></script>
+</body>
+
+</html>
