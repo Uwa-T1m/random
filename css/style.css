@@ -26,8 +26,8 @@ body {
 
 .topnav {
   overflow: hidden;
-  padding: 15px;
-  position: sticky;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
   top: 0;
   z-index: 1000;
   display: flex;
@@ -650,6 +650,7 @@ footer p {
 .productInfo{
   position: relative;
   width: 100%;
+  display: none;
 }
 
   footer {
