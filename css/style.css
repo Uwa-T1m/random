@@ -644,13 +644,12 @@ footer p {
   display: flex;
   align-items: center;
   justify-content: center;
-  display: none;
+  
 }
 
 .productInfo{
   position: relative;
   width: 100%;
-  display: none;
 }
 
   footer {
