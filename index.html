@@ -347,7 +347,8 @@
                     productCard.appendChild(btn_holder);
                     btn_holder.appendChild(reaction)
 
-                    productPrice.innerHTML = `$${product1.price}`
+                    let productSymbol = `$`
+                    productPrice.innerHTML = `${productSymbol}${product1.price}`
                     productImage.src = imageURL
                     productName.innerHTML = product1.title;
                     btn_holder.innerHTML = `

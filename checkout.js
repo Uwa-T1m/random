@@ -37,13 +37,14 @@ quantityInputs.forEach(quantityInput => {
     function calculatePrice() {
         const price = document.querySelector('.price')
         const qty = parseFloat(quantityInput.value);
-        const priceValue = parseFloat(price.innerHTML);
+        const productSymbol = `$`
+        const priceValue = parseFloat(price.innerHTML.replace(productSymbol,''));
         const total = qty * priceValue;
         
         if (quantityInput.value === '') {
             productTotal.innerHTML = 0
         } else {
-            productTotal.innerHTML = total
+            productTotal.innerHTML =`$` + total
             // SUBTOTALS AND FINAL PRICE
             const subTotal = document.querySelector('.subTotals'),
             finalPrice =  document.querySelector('.finalPrice');
