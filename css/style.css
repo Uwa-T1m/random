@@ -366,11 +366,13 @@ body {
   gap: 30px;
   align-items: center;
   justify-content: center;
-  overflow-x: auto;
+  overflow: hidden;
 }
 
 .sponsor-card {
   padding: 20px 10px;
+  height: 100px;
+  width: 200px;
 }
 
 footer {
@@ -511,14 +513,14 @@ footer p {
 }
 
 @media screen and (max-width: 800px) {
-
+  
   .card-hold,
   .card-hold-1 {
     display: flex;
     gap: 45px;
     overflow-x: scroll;
   }
-
+  
   .blakfri {
     height: auto;
   }
@@ -538,7 +540,7 @@ footer p {
   .topnav a {
     display: none;
   }
-
+  
   .topnav .icon {
     float: right;
     display: block;
@@ -546,22 +548,22 @@ footer p {
 }
 
 @media screen and (max-width: 600px) {
-
+  
   .topnav{
     padding: 0;
-
+    
   }
-
+  
   .topnav.responsive {
     position: relative;
   }
-
+  
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
     top: 0;
   }
-
+  
   .topnav .list a {
     float: none;
     display: block;
@@ -581,6 +583,10 @@ footer p {
     flex-direction: column;
     padding-top: 60px;
   }
+.sponsor-card-holder{
+  overflow-x: auto;
+}
+
 
   #close {
     position: absolute;
