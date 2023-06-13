@@ -37,58 +37,67 @@
     <!-- Hero -->
     <div class="slideshow-container">
 
-        <div class="mySlides fade hero">
-            <h1>Summer Trade Is Finally Here!</h1>
-            <b>
-                <p>Get every product at 10% discount</p>
-            </b>
-            <br>
-        </div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="mySlides fade hero">
+                        <h1>Summer Trade Is Finally Here!</h1>
+                        <b>
+                            <p>Get every product at 10% discount</p>
+                        </b>
+                        <br>
+                    </div>
 
-        <div class="mySlides fade hero">
-        </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="mySlides fade hero">
+                    </div>
 
-        <div class="mySlides fade hero">
-            <h1>Top Deals On Jeweleries</h1>
-            <b>
-                <p>Get Cool Jeweleries at an affordable price</p>
-            </b>
-            <br>
-        </div>
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="mySlides fade hero">
+                        <h1>Top Deals On Jeweleries</h1>
+                        <b>
+                            <p>Get Cool Jeweleries at an affordable price</p>
+                        </b>
+                        <br>
+                    </div>
 
-        <script>
-            var slideIndex = 1;
-            showSlides(slideIndex);
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
 
-            function plusSlides(n) {
-                showSlides(slideIndex += n);
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
             }
-
-            function currentSlide(n) {
-                showSlides(slideIndex = n);
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
             }
-
-            function showSlides(n) {
-                var i;
-                var slides = document.getElementsByClassName("mySlides");
-                var dots = document.getElementsByClassName("dot");
-                if (n > slides.length) { slideIndex = 1 }
-                if (n < 1) { slideIndex = slides.length }
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].className += " active";
-            }
-        </script>
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
     </div>
 
 
@@ -217,6 +226,8 @@
                     productCard.classList.add('cards');
                     btn_holder.classList.add('btn-holder');
                     reaction.classList.add('reaction');
+                    // cardHolder.classList.add('swiper')
+                    // cardHolder.classList.add('mySwiper')
 
                     cardHolder.appendChild(productCard);
                     productCard.appendChild(productImageHolder);
@@ -385,7 +396,6 @@
         <p><i class="far fa-phone"></i> 555 555 555 5559</p>
 
     </footer>
-
     <script src="home.js"></script>
     <script>
         // Get all "Add to Cart" buttons
@@ -449,7 +459,7 @@
         const selectedProductdescription = document.querySelector('.description')
         const selectProductprice = document.querySelector('.selectedprice')
         const selectProductimage = productInfo.querySelector('img')
-        
+
         const cards = document.querySelectorAll('.cards')
         cards.forEach(card => {
             card.addEventListener('click', (addEvent) => {
@@ -457,48 +467,48 @@
                 var cardName = card.querySelectorAll('.product-title')[0].innerHTML;
                 var cardDescription = card.querySelectorAll('.product-price')[0].innerHTML;
                 var cardImage = card.querySelectorAll('.product-image')[0].src;
-                
+
                 var previewItem = {
                     "name": cardName,
                     "description": cardDescription,
                     "image": cardImage
                 };
-                
+
                 previewItems.push(previewItem)
                 console.log(previewItems);
                 document.querySelector('.productHolder').style.display = 'block'
-                
+
                 for (let i = 0; i < products.length; i++) {
                     const product = products[i]
-        
-                    selectedProductname.innerHTML = previewItems[previewItems.length -1].name;
+
+                    selectedProductname.innerHTML = previewItems[previewItems.length - 1].name;
                     selectedProductdescription.innerHTML = product.description;
-                    selectProductprice.innerHTML = previewItems[previewItems.length -1].description;
-                    selectProductimage.src = previewItems[previewItems.length -1].image;
+                    selectProductprice.innerHTML = previewItems[previewItems.length - 1].description;
+                    selectProductimage.src = previewItems[previewItems.length - 1].image;
                 }
             })
         })
         const sizes = document.querySelectorAll('.size span'),
-        colors = document.querySelectorAll('.color span')
+            colors = document.querySelectorAll('.color span')
 
-        const removeSizeSelector = () => sizes.forEach(size=>{
+        const removeSizeSelector = () => sizes.forEach(size => {
             size.classList.remove('activeSize')
 
         })
 
-        const removeColorSelector = () => colors.forEach(color=>{
+        const removeColorSelector = () => colors.forEach(color => {
             color.classList.remove('activeColor')
         })
 
-        sizes.forEach(size=>{
-            size.onclick = () =>{
+        sizes.forEach(size => {
+            size.onclick = () => {
                 removeSizeSelector()
-            size.classList.add('activeSize')
+                size.classList.add('activeSize')
             }
         })
 
-        colors.forEach(color=>{
-            color.onclick = () =>{
+        colors.forEach(color => {
+            color.onclick = () => {
                 removeColorSelector()
                 color.classList.add('activeColor')
             }
@@ -514,22 +524,23 @@
 
 <script>
     var swiper = new Swiper(".mySwiper", {
-      effect: "coverflow",
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: "auto",
-      coverflowEffect: {
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: true,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-      },
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
     });
-  </script>
+</script>
 
-<link rel="stylesheet" href="./swiper-bundle.min.css">
-  <script src="./swiper-bundle.min.js"></script>
+
+<!-- <link rel="stylesheet" href="./swiper-bundle.min.css">
+  <script src="./swiper-bundle.min.js"></script> -->
