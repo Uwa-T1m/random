@@ -11,6 +11,8 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./swiper-bundle.min.css">
+    <script src="./swiper-bundle.min.js"></script>
 </head>
 
 <body>
@@ -50,12 +52,12 @@
 
                 </div>
                 <div class="swiper-slide">
-                    <div class="mySlides fade hero">
+                    <div class="mySlides fade hero" style=" background: url(./banner.jpg)center/cover no-repeat;">
                     </div>
 
                 </div>
                 <div class="swiper-slide">
-                    <div class="mySlides fade hero">
+                    <div class="mySlides fade hero" style=" background: url(./banner1.jpg)center/cover no-repeat;">
                         <h1>Top Deals On Jeweleries</h1>
                         <b>
                             <p>Get Cool Jeweleries at an affordable price</p>
@@ -70,34 +72,7 @@
             <div class="swiper-pagination"></div>
         </div>
     </div>
-    <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
 
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-        }
-    </script>
     </div>
 
 
@@ -131,6 +106,7 @@
     <!-- BLACK FRIDAY DEALS -->
     <section class="blakfri" id="black-friday">
         <h1 style="margin-top: 10px;">Exciting Deals</h1>
+        <div class="viewContainer">
         <div class="card-hold">
             <script>
                 let products = [
@@ -213,6 +189,7 @@
                     const productImageHolder = document.createElement('div');
                     const productImage = document.createElement('img');
                     const imageURL = product.image;
+                    const info = document.createElement('div')
                     const productCard = document.createElement('div');
                     const productName = document.createElement('h4');
                     const productPrice = document.createElement('b');
@@ -226,16 +203,16 @@
                     productCard.classList.add('cards');
                     btn_holder.classList.add('btn-holder');
                     reaction.classList.add('reaction');
-                    // cardHolder.classList.add('swiper')
-                    // cardHolder.classList.add('mySwiper')
+                    info.classList.add('info')
 
                     cardHolder.appendChild(productCard);
                     productCard.appendChild(productImageHolder);
+                    productCard.appendChild(info);
                     productImageHolder.appendChild(productImage);
-                    productCard.appendChild(productName);
-                    productCard.appendChild(productPrice);
-                    productCard.appendChild(btn_holder);
-                    btn_holder.appendChild(reaction)
+                    info.appendChild(productName);
+                    info.appendChild(productPrice);
+                    info.appendChild(btn_holder);
+                    info.appendChild(reaction)
 
                     productPrice.innerHTML = `$${product.price}`
                     productImage.src = imageURL
@@ -249,7 +226,8 @@
       <button><i class="fas fa-heart"></i></button>
       <button><i class="fas fa-share"></i></button>
     `
-                }
+
+}
 
             </script>
         </div>
@@ -336,6 +314,7 @@
                     const productImageHolder = document.createElement('div');
                     const productImage = document.createElement('img');
                     const imageURL = product1.image;
+                    const info = document.createElement('div')
                     const productCard = document.createElement('div');
                     const productName = document.createElement('h4');
                     const productPrice = document.createElement('b');
@@ -349,13 +328,15 @@
                     productCard.classList.add('cards');
                     btn_holder.classList.add('btn-holder');
                     reaction.classList.add('reaction');
+                    info.classList.add('info')
 
                     cardHolder.appendChild(productCard);
                     productCard.appendChild(productImageHolder);
                     productImageHolder.appendChild(productImage);
-                    productCard.appendChild(productName);
-                    productCard.appendChild(productPrice);
-                    productCard.appendChild(btn_holder);
+                    productImageHolder.appendChild(info);
+                    info.appendChild(productName);
+                    info.appendChild(productPrice);
+                    info.appendChild(btn_holder);
                     btn_holder.appendChild(reaction)
 
                     let productSymbol = `$`
