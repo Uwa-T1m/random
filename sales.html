@@ -6,20 +6,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="./swiper-bundle.min.css">
+        <script src="./swiper-bundle.min.js"></script>
 </head>
 <body>
     <!-- Navbar -->
     <nav class="topnav">
         <div class="logo">
-            <h3><i class="fas fa-shopping-cart"></i> Shopper</h3>
+            <h3> Shopper</h3>
         </div>
         <a href="javascript:void(0);" class="icon" onclick="openNav()">
             <i class="fa fa-bars"></i>
         </a>
         <div class="list" id="mySidebar">
-            <a href="index.html">Home</a>
+            <a href="./index.html">Home</a>
             <a href="./sales.html" class="active">Deals</a>
-            <a href="./checkout.html">Checkout</a>
+            <a href="./checkout.html"><i class="fas fa-shopping-cart"></i></a>
             <i class="fa fa-times" id="close" onclick="closeNav()"></i>
         </div>
     </nav>
@@ -27,34 +29,34 @@
    <!-- Hero -->
    <div class="slideshow-container">
 
-    <div class="mySlides fade hero">
-        <h1>Black Friday Is Finally Here!</h1>
-        <b>
-            <p>Get every product at 10% discount</p>
-        </b>
-        <br>
-    </div>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="mySlides fade hero">
+                    <h1>Summer Trade Is Finally Here!</h1>
+                    <b>
+                        <p>Get every product at 10% discount</p>
+                    </b>
+                    <br>
+                </div>
 
-    <div class="mySlides fade hero">
-        <h1>Black Friday Is Finally Hereghfj!</h1>
-        <b>
-            <p>Get every product at 10% discount</p>
-        </b>
-        <br>
-    </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="mySlides fade hero" style=" background: url(./banner.jpg)center/cover no-repeat;">
+                </div>
 
-    <div class="mySlides fade hero">
-        <h1>Black Friday Is Finally Here!ggjgjgfj</h1>
-        <b>
-            <p>Get every product at 10% discount</p>
-        </b>
-        <br>
+            </div>
+            <div class="swiper-slide">
+                <div class="mySlides fade hero" style=" background: url(./banner1.jpg)center/cover no-repeat;">
+                    <h1>Top Deals On Jeweleries</h1>
+                    <b>
+                        <p>Get Cool Jeweleries at an affordable price</p>
+                    </b>
+                    <br>
+                </div>
+
+            </div>
     </div>
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span> 
-        <span class="dot" onclick="currentSlide(2)"></span> 
-        <span class="dot" onclick="currentSlide(3)"></span> 
-      </div>
       
       <script>
         var slideIndex = 1;
