@@ -1,6 +1,8 @@
 const cartItems = JSON.parse(localStorage.getItem('productInfo'));
 
-const table = document.querySelector('table');
+for (let i = 0; i < cartItems.length; i++) {
+    const cartItem = cartItems[i]
+    const table = document.querySelector('table');
 const row = document.createElement('tr');
 const productImageHolder = document.createElement('td');
 const productName = document.createElement('td');
@@ -19,14 +21,13 @@ row.appendChild(productTotal)
 console.log(table);
 
 productImageHolder.innerHTML = `
-<img src=${cartItems[0].image} />
+<img src=${cartItem.image} />
 `
 
-productName.innerHTML = JSON.stringify(cartItems[0].name);
+productName.innerHTML = JSON.stringify(cartItem.name);
 productQty.innerHTML = `
 <input type='number'  id='qtyOfGoods' value=1 />`
-productPrice.innerHTML = cartItems[0].description;
-
+productPrice.innerHTML = cartItem.description;
 
 const quantityInputs = document.querySelectorAll('#qtyOfGoods');
 
@@ -59,10 +60,14 @@ quantityInputs.forEach(quantityInput => {
             alert(`THE CART IS EMPTY!`)
         } else {
             alert(`CHECKOUT SUCCESSFUL`)
-            table.innerHTML = ''
+            row.innerHTML = ''
         }
     }
     
 }
+
 )
 
+
+
+}
