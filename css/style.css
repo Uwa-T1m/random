@@ -179,6 +179,10 @@ body {
   text-align: start;
 }
 
+.card a{
+  color: #111;
+}
+
 .card .btn a {
   color: #fff;
   text-decoration: none;
