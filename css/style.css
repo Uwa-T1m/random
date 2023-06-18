@@ -14,6 +14,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+html{
+  scroll-behavior: smooth;
+  
+}
 
 .list {
   display: flex;
@@ -607,19 +611,20 @@ footer p {
 
   .card-hold,
   .card-hold-1 {
-    display: table;
+    display: flex;
     gap: 15px;
-    clear: both;
     overflow-x: scroll;
     margin-top: 0;
   }
 
   .cards {
-    width: 50%;
-    float: left;
+    width: 33.3%;
     height: auto;
   }
 
+  .cards button{
+    font-size: 14px;
+  }
 
   .sponsor-card {
     padding: 30px;
