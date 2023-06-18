@@ -55,10 +55,11 @@ quantityInputs.forEach(quantityInput => {
     }
     
     document.getElementById('cartButton').onclick = () =>{
-        if (row.innerHTML = '') {
+        if (table.innerHTML === '') {
             alert(`THE CART IS EMPTY!`)
         } else {
             alert(`CHECKOUT SUCCESSFUL`)
+            table.innerHTML = ''
         }
     }
     
