@@ -8,6 +8,16 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="./swiper-bundle.min.css">
         <script src="./swiper-bundle.min.js"></script>
+        <script src="./home.js"></script>
+        <style>
+            .product-title{
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+            }
+        </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -57,37 +67,18 @@
 
             </div>
     </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+    </div>
       
-      <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
-        
-        function plusSlides(n) {
-          showSlides(slideIndex += n);
-        }
-        
-        function currentSlide(n) {
-          showSlides(slideIndex = n);
-        }
-        
-        function showSlides(n) {
-          var i;
-          var slides = document.getElementsByClassName("mySlides");
-          var dots = document.getElementsByClassName("dot");
-          if (n > slides.length) {slideIndex = 1}    
-          if (n < 1) {slideIndex = slides.length}
-          for (i = 0; i < slides.length; i++) {
-              slides[i].style.display = "none";  
-          }
-          for (i = 0; i < dots.length; i++) {
-              dots[i].className = dots[i].className.replace(" active", "");
-          }
-          slides[slideIndex-1].style.display = "block";  
-          dots[slideIndex-1].className += " active";
-        }
-        </script>
+      
 </div>
 
+<div class="search">
+    <button><i class="fas fa-search"></i></button>
+    <input type="search" placeholder="Search..">
+</div>
 
     <section class="blakfri" id="black-friday">
         <br><br>
@@ -130,5 +121,25 @@
     </section>
    
     <script src="./product.js"></script>
+    
+  <script>
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+  </script>
+
 </body>
 </html>
