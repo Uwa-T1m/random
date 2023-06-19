@@ -14,9 +14,35 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-html{
+html {
   scroll-behavior: smooth;
-  
+
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid .card-holder {
+  display: grid;
+  height: auto;
+  width: 100%;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+}
+
+.grid .card-holder .card {
+  height: 200px;
+  width: 200px;
+  margin: 30px 0;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+  height: auto;
 }
 
 .list {
@@ -31,7 +57,7 @@ html{
 .topnav {
   overflow: hidden;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-    position: sticky;
+  position: sticky;
   top: 0;
   z-index: 1000;
   display: flex;
@@ -78,21 +104,21 @@ html{
   justify-content: center;
   height: 15vh;
   width: 100%;
-  margin:10px auto;
+  margin: 10px auto;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 15px;
   padding-top: 15px;
 }
 
-.hero:nth-child(2){
+.hero:nth-child(2) {
   background: url(./banner.jpg)center/cover no-repeat;
 }
 
-.hero:nth-child(3){
+.hero:nth-child(3) {
   background: url(./banner1.jpg)center/cover no-repeat;
   color: #111;
- text-align: center;
+  text-align: center;
 }
 
 .categories {
@@ -110,7 +136,7 @@ html{
   margin: auto;
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -126,7 +152,7 @@ html{
   font-size: 20px;
   background: none;
   border: 0;
-  margin:0 5px;
+  margin: 0 5px;
 }
 
 .card-holder {
@@ -158,13 +184,6 @@ html{
   transition: 0.4s;
 }
 
-.card .pic:nth-child(1) img {
-  transform: scale(1.01);
-}
-
-.card .pic img:hover {
-  transform: scale(1.1);
-}
 
 .card .btn {
   position: absolute;
@@ -183,7 +202,7 @@ html{
   text-align: start;
 }
 
-.card a{
+.card a {
   color: #111;
 }
 
@@ -199,8 +218,8 @@ html{
 
 .card-hold::after,
 .card-hold-1::after {
-display: table;
-clear: both;
+  display: table;
+  clear: both;
 }
 
 
@@ -219,11 +238,11 @@ clear: both;
 }
 
 
-.info{
+.info {
   width: 100%;
 }
 
-.info h4{
+.info h4 {
   display: -webkit-box;
   -webkit-line-clamp: 1;
   overflow: hidden;
@@ -301,7 +320,7 @@ clear: both;
   color: red;
 }
 
-.cards  b{
+.cards b {
   color: black;
   font-weight: 300;
   word-spacing: 20px;
@@ -413,7 +432,7 @@ footer p {
   justify-content: center;
 }
 
-.size span.activeSize{
+.size span.activeSize {
   background: #000;
   color: #fff;
 }
@@ -437,8 +456,9 @@ footer p {
   outline: 1px solid #ddd;
 }
 
-.productInfo .color span:hover,.productInfo .color span.activeColor  {
-  outline: 1px solid ;
+.productInfo .color span:hover,
+.productInfo .color span.activeColor {
+  outline: 1px solid;
 }
 
 .productInfo .color span:nth-child(2) {
@@ -449,11 +469,11 @@ footer p {
   background: blue;
 }
 
-.productHolder.gone{
+.productHolder.gone {
   display: none;
 }
 
-.productInfo button{
+.productInfo button {
   width: 90%;
   padding: 15px 10px;
   font-size: 18px;
@@ -473,7 +493,7 @@ footer p {
 }
 
 @media screen and (max-width: 800px) {
-  
+
   .card-hold,
   .card-hold-1 {
     display: table;
@@ -482,7 +502,7 @@ footer p {
     overflow-x: scroll;
   }
 
-  .cards{
+  .cards {
     width: 50%;
     float: left;
   }
@@ -490,13 +510,14 @@ footer p {
   .blakfri {
     height: auto;
   }
-  .productHolder{
+
+  .productHolder {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
-  .productInfo{
+
+  .productInfo {
     position: relative;
     width: 100%;
   }
@@ -506,7 +527,7 @@ footer p {
   .topnav a {
     display: none;
   }
-  
+
   .topnav .icon {
     float: right;
     display: block;
@@ -514,22 +535,22 @@ footer p {
 }
 
 @media screen and (max-width: 600px) {
-  
-  .topnav{
+
+  .topnav {
     padding: 0;
-    
+
   }
-  
+
   .topnav.responsive {
     position: relative;
   }
-  
+
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
     top: 0;
   }
-  
+
   .topnav .list a {
     float: none;
     display: block;
@@ -549,9 +570,10 @@ footer p {
     flex-direction: column;
     padding-top: 60px;
   }
-.sponsor-card-holder{
-  overflow-x: auto;
-}
+
+  .sponsor-card-holder {
+    overflow-x: auto;
+  }
 
 
   #close {
@@ -622,7 +644,7 @@ footer p {
     height: auto;
   }
 
-  .cards button{
+  .cards button {
     font-size: 14px;
   }
 
@@ -630,16 +652,21 @@ footer p {
     padding: 30px;
   }
 
-.productHolder{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-}
+  .productHolder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.productInfo{
-  position: relative;
-  width: 100%;
+  }
+
+  .productInfo {
+    position: relative;
+    width: 100%;
+  }
+
+.grid .card-holder .card img{
+  height: 200px;
+  width: 200px;
 }
 
   footer {
